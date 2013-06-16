@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twilio Survivor Challenge</title>
+</head>
+
+<body>
+	<h1>Twilio Survivor Challenge</h1>
+
+	<ul id="#account"></ul>
+
+	<script>
+	var request = new XMLHttpRequest();
+	request.open('GET', '/twilio/account', true);
+	request.send();
+
+	request.onreadystatechange = function(){
+		if(request.readyState === 4 && request.status === 200){
+			var account = JSON.parse(request.responseText);
+			displayAccount(account);
+		}
+	}
+
+	function displayAccount(account) {
+		var accountElmt = document.getElementById('#account');
+		accountElmt.innerText = account.friendlyName;
+	}
+
+	</script>
+</body>
+</html>

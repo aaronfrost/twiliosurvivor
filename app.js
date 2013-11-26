@@ -44,11 +44,9 @@ app.get('/twilio/account', function(request, response) {
 
 
 
-app.post('/sms/send/:to', function(request, response){
-	var to = request.params.to;
-	var msg = request.body;
+app.post('/start/:name', function(request, response) {
+  // Start here
 
-	// START HERE
 
-	response.end('success');
+  response.send('ok');
 });

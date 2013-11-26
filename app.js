@@ -8,8 +8,8 @@ var TWILIO_SID = process.env.TWILIO_SID,
 	  TWILIO_AUTHTOKEN = process.env.TWILIO_AUTHTOKEN;
 
 var HOST_NUMBER = '+18016236842';
-var MY_NUMBER = '+YOUR_TWILIO_NUMBER';
-var MY_HOSTNAME = 'YOUR_HEROKU_APP.herokuapp.com'
+var MY_NUMBER = '+18018902560';
+var MY_HOSTNAME = 'http://obscure-ocean-9485.herokuapp.com'
 
 // Create twilio client
 var twilioClient = twilio(TWILIO_SID, TWILIO_AUTHTOKEN);
@@ -47,6 +47,11 @@ app.get('/twilio/account', function(request, response) {
 app.post('/start/:name', function(request, response) {
   // Start here
 
+  twilioClient.sendSms({
+    to: HOST_NUMBER,
+    from: MY_NUMBER,
+    body: 'hello ' + request.params.name
+  });
 
   response.send('ok');
 });

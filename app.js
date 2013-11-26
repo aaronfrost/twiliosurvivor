@@ -15,6 +15,8 @@ var MY_HOSTNAME = 'http://fast-wildwood-2613.herokuapp.com/'
 // Create twilio client
 var twilioClient = twilio(TWILIO_SID, TWILIO_AUTHTOKEN);
 
+// Body parser middleware
+app.use(express.bodyParser());
 
 // Start server
 var port = process.env.PORT || 5001;
@@ -185,11 +187,11 @@ app.post('/mp3', function(req, res) {
 });
 
 
-
-// For testing
-app.post('/sms/send/:to', function(request, response){
+app.post('/send/:to', function(request, response){
   var to = request.params.to;
-  var msg = request.body;
+  var msg = request.body.message;
+
+  console.log(msg);
 
   twilioClient.sendSms({
     to: to,
@@ -199,5 +201,5 @@ app.post('/sms/send/:to', function(request, response){
     console.log('error', error, responseData);
   });
 
-  response.end('success');
+  response.end('ok');
 });

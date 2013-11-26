@@ -5,7 +5,11 @@ var  express = require('express')
 
 // Load twilio properties
 var TWILIO_SID = process.env.TWILIO_SID,
-	TWILIO_AUTHTOKEN = process.env.TWILIO_AUTHTOKEN;
+	  TWILIO_AUTHTOKEN = process.env.TWILIO_AUTHTOKEN;
+
+var HOST_NUMBER = '+18016236842';
+var MY_NUMBER = '+YOUR_TWILIO_NUMBER';
+var MY_HOSTNAME = 'YOUR_HEROKU_APP.herokuapp.com'
 
 // Create twilio client
 var twilioClient = twilio(TWILIO_SID, TWILIO_AUTHTOKEN);

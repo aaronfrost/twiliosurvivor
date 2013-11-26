@@ -14,6 +14,8 @@ var MY_HOSTNAME = 'YOUR_HEROKU_APP.herokuapp.com'
 // Create twilio client
 var twilioClient = twilio(TWILIO_SID, TWILIO_AUTHTOKEN);
 
+// Body parser middleware
+app.use(express.bodyParser());
 
 // Start server
 var port = process.env.PORT || 5001;

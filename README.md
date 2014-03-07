@@ -1,7 +1,7 @@
 This is a starter project for the Twilio Survivor event. To get this code run the following from your terminal:
 
 ```
-git clone <link to repo>
+git clone https://github.com/aaronfrost/twiliosurvivor.git
 ```
 
 Once you have cloned the repo, type:

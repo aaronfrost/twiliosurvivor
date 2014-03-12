@@ -4,6 +4,7 @@ var  express = require('express')
     , twilio = require('twilio');
 
 // Load twilio properties
+//TODO: YOU NEED TO GO INTO THIS FILE AND PASTE YOUR TWILIO CREDS
 var twCreds = require('./twCreds');
 
 

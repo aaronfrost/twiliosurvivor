@@ -4,15 +4,15 @@ var  express = require('express')
     , twilio = require('twilio');
 
 // Load twilio properties
-var TWILIO_SID = process.env.TWILIO_SID,
-	  TWILIO_AUTHTOKEN = process.env.TWILIO_AUTHTOKEN;
+var twCreds = require('./twCreds');
+
 
 var HOST_NUMBER = '+18016236842';
 var MY_NUMBER = '+YOUR_TWILIO_NUMBER';
-var MY_HOSTNAME = 'YOUR_HEROKU_APP.herokuapp.com'
+var MY_HOSTNAME = 'YOUR_DIGITAL_OCEAN_IP'
 
 // Create twilio client
-var twilioClient = twilio(TWILIO_SID, TWILIO_AUTHTOKEN);
+var twilioClient = twilio(twCreds.TWILIO_SID, twCreds.TWILIO_AUTHTOKEN);
 
 // Body parser middleware
 app.use(express.bodyParser());
@@ -30,7 +30,7 @@ app.use("/", express.static(__dirname + '/public'));
 
 // Configure routes
 app.get('/twilio/account', function(request, response) {
-	twilioClient.accounts(TWILIO_SID).get(function(err, account) {
+	twilioClient.accounts(twCreds.TWILIO_SID).get(function(err, account) {
     	if(err) {
     		response.send({});
     	} else {

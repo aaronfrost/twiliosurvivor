@@ -1,4 +1,4 @@
-modules.exports = {
+module.exports = {
   TWILIO_SID: 'TWILIO_SID_HERE',
   TWILIO_AUTHTOKEN: 'TWILIO_AUTHTOKEN_HERE'
 };

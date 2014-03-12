@@ -7,7 +7,7 @@ var  express = require('express')
 //TODO: YOU NEED TO GO INTO THIS FILE AND PASTE YOUR TWILIO CREDS
 var twCreds = require('./twCreds');
 
-
+//LEAVE THE +1 at the beginning of the numbers. Otherwise, it doesn't work.
 var HOST_NUMBER = '+18016236842';
 var MY_NUMBER = '+YOUR_TWILIO_NUMBER';
 var MY_HOSTNAME = 'YOUR_DIGITAL_OCEAN_IP'
